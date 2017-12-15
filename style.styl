@@ -33,7 +33,42 @@ body
       color: blue
       a
         background-color: @color
-  
+
+//插值(Interpolation)
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  {prop} args
+
+border-radius()
+  vendor('border-radius', arguments)
+
+box-shadow()
+  vendor('box-shadow', arguments)
+
+button
+  border-radius 1px 2px / 3px 4px
+
+table
+  for row in 1 2 3 4 5
+    tr:nth-child({row})
+      height: 10px * row
+
+//运算符(Operators)
+pad(types = padding, n = 5px)
+  if padding in types
+    padding n
+  if margin in types
+    margin n
+
+body
+  pad()
+
+body
+  pad(margin)
+
+body
+  pad(padding margin, 10px)
   
   
   
