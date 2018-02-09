@@ -1,5 +1,0 @@
-安装
-npm install stylus -g
-
-将.styl文件导出.css:
-stylus -w style.styl -o style.css
